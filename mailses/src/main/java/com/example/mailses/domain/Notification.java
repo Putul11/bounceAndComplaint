@@ -5,22 +5,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Notification {
     private String eventType;
-    private String recipientEmail;
-    private String status;
-    private String action;
-    private String feedbackId;
-    private LocalDateTime localDateTime;
+    private Bounce bounce;
     private String senderName;
     private String senderMail;
     private String domain;
-    private String messageType;
+
 
 }
