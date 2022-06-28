@@ -11,14 +11,15 @@ public class NotificationController {
     @Autowired
     private NotificationService notificationService;
 
-    @PostMapping("/sendNotification")
-    public Notification sendNotification(@RequestBody Notification notification){
-        return notificationService.sendNotification(notification);
+    @PostMapping("/sendNotification/")
+    public Notification sendNotification(@RequestBody Notification notification,
+                                         @RequestParam String bounceType){
+        return notificationService.sendNotification(notification, bounceType);
     }
 
-    @MessageMapping("/getNotification")
-    public Notification getNotification(@RequestParam String messageType, @RequestParam String eventType){
-        return notificationService.getNotification(messageType, eventType);
-    }
+//    @GetMapping("/getNotification")
+//    public Notification getNotification(@RequestParam String messageType, @RequestParam String eventType){
+//        return notificationService.getNotification(messageType, eventType);
+//    }
 
 }
